@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "pixivproxy": {
+      "matchCondition": {
+        "methods": [
+          "GET"
+        ],
+        "route": "/{*url}"
+      },
+      "backendUri": "https://i.pximg.net/{url}",
+      "requestOverrides": {
+        "backend.request.headers.host": "https://i.pximg.net",
+        "backend.request.headers.referer": "https://www.pixiv.net/"
+      }
+    }
+  }
+}
